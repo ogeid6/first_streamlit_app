@@ -23,7 +23,7 @@ streamlit.dataframe(fruits_to_show)
 # fruityvice advice
 streamlit.header("Fruityvice fruit advice")
 fruit_choice = streamlit.text_input('what fruit would you like information about?','kiwi')
-streamlit.write =('the user entered', fruit_choice)
+streamlit.write = ('the user entered', fruit_choice)
 fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + fruit_choice)
 fruityvice_normalized = pd.json_normalize(fruityvice_response.json())
 streamlit.dataframe(fruityvice_normalized)
@@ -35,8 +35,8 @@ my_cur.execute("select * from fruit_load_list")
 my_data_row = my_cur.fetchall()
 streamlit.header("the fruit load list contains:")
 streamlit.dataframe(my_data_row)
-
-
 add_my_fruit = streamlit.text_input('what fruit would you like to load?')
+
 my_cur.execute("insert into FRUIT_LOAD_LIST values ('" + add_my_fruit + "')")
 streamlit.text('thanks for adding ' + add_my_fruit)
+streamlit.write = ('the user entered', add_my_fruit)
