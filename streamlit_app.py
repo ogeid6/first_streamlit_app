@@ -35,17 +35,19 @@ try:
   else:
     fruityvice_data(fruit_choice)
 except URLError as e:
-  streamlit.error("retards")
+  streamlit.error()
 
-
-
-# fruit list on snowflake
-my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
-my_cur = my_cnx.cursor()
-my_cur.execute("select * from fruit_load_list")
-my_data_row = my_cur.fetchall()
+# get fruit list from snowflake
 streamlit.header("the fruit load list contains:")
-streamlit.dataframe(my_data_row)
+def get_fruit_list():
+  my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
+  my_cur = my_cnx.cursor()
+  my_cur.execute("select * from fruit_load_list")
+  my_data_row = my_cur.fetchall()
+  return streamlit.dataframe(my_data_row)
+if streamlit.button('Get fruit list'):
+  get_fruit_list()
+  
 
 # adding to fruit list
 add_my_fruit = streamlit.text_input('what fruit would you like to load?')
