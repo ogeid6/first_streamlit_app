@@ -8,7 +8,7 @@ import urllib.error
 # menu  
 streamlit.title("Breakfast Favorites")
 streamlit.header('Breakfast Menu')
-streamlit.text(" 🥣 Omega 3 & Blueberry Oatmeal")
+streamlit.text(' 🥣 Omega 3 & Blueberry Oatmeal')
 streamlit.text(' 🥗 Kale, Spinach & Rocket Smoothie')
 streamlit.text(' 🐔 Hard-Boiled Free-Range Egg')
 streamlit.text(' 🥑🍞 Avocado Toast')
@@ -56,7 +56,7 @@ def insert_fruit(fruit):
     return "thanks for adding " + fruit
   
 add_my_fruit = streamlit.text_input('what fruit would you like to load?')
-if streamlit.button('add fruit to the list'):
+if streamlit.button('Add fruit to the list'):
   my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
   insert_fruit(add_my_fruit)
   
