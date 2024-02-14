@@ -28,11 +28,11 @@ def fruityvice_data(fruit):
   fruityvice_normalized = pd.json_normalize(fruityvice_response.json())
   return  streamlit.dataframe(fruityvice_normalized)
 try:
-  fruit_choice = streamlit.text_input('what fruit would you like information about?')
-  if not fruit_choice:
-    streamlit.error("please select a fruit to get information")
-  else:
-   fruityvice_data(fruit_choice)
+    fruit_choice = streamlit.text_input('what fruit would you like information about?')
+    if not fruit_choice:
+      streamlit.error("please select a fruit to get information")
+    else:
+     fruityvice_data(fruit_choice)
 
 
 # fruit list on snowflake
