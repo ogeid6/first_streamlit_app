@@ -23,7 +23,7 @@ streamlit.dataframe(fruits_to_show)
 
 # fruityvice advice
 streamlit.header("Fruityvice fruit advice")
-def add_fruit(fruit):
+def fruityvice_data(fruit):
   fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + fruit)
   fruityvice_normalized = pd.json_normalize(fruityvice_response.json())
   return  streamlit.dataframe(fruityvice_normalized)
@@ -32,7 +32,7 @@ try:
   if not fruit_choice:
     streamlit.error("please select a fruit to get information")
   else:
-   add_fruit(fruit_choice)
+   fruityvice_data(fruit_choice)
     
 
 # fruit list on snowflake
