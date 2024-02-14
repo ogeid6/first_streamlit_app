@@ -34,7 +34,7 @@ try:
   else:
    fruityvice_data(fruit_choice)
 
-streamlit.stop()
+
 # fruit list on snowflake
 #my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
 #my_cur = my_cnx.cursor()
