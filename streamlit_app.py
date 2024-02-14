@@ -34,7 +34,7 @@ try:
   else:
     streamlit.write = ('the user entered', fruit_choice)
     add_fruit(fruit_choice)
-except url error as e:
+except urlerror as e:
   streamlit.error()
 streamlit.stop()
 # fruit list on snowflake
