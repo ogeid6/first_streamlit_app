@@ -36,16 +36,16 @@ try:
     
 
 # fruit list on snowflake
-my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
-my_cur = my_cnx.cursor()
-my_cur.execute("select * from fruit_load_list")
-my_data_row = my_cur.fetchall()
-streamlit.header("the fruit load list contains:")
-streamlit.dataframe(my_data_row)
+#my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
+#my_cur = my_cnx.cursor()
+#my_cur.execute("select * from fruit_load_list")
+#my_data_row = my_cur.fetchall()
+#streamlit.header("the fruit load list contains:")
+#streamlit.dataframe(my_data_row)
 
 # adding to fruit list
-add_my_fruit = streamlit.text_input('what fruit would you like to load?')
-streamlit.write = ('Thanks for adding', add_my_fruit)
-my_cur.execute("insert into FRUIT_LOAD_LIST values ('" + add_my_fruit + "')")
+#add_my_fruit = streamlit.text_input('what fruit would you like to load?')
+#streamlit.write = ('Thanks for adding', add_my_fruit)
+#my_cur.execute("insert into FRUIT_LOAD_LIST values ('" + add_my_fruit + "')")
 
 
