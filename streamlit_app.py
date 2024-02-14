@@ -35,7 +35,9 @@ try:
     else:
         fruityvice_data(fruit_choice)
 except urlError as e:
-  streamlit.error("not working bud")
+  
+
+
 streamlit.stop()
 # fruit list on snowflake
 my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
