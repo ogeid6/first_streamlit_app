@@ -30,9 +30,9 @@ def fruityvice_data(fruit):
 try:
     fruit_choice = streamlit.text_input('what fruit would you like information about?')
     if not fruit_choice:
-      streamlit.error("please select a fruit to get information")
+        streamlit.error("please select a fruit to get information")
     else:
-     fruityvice_data(fruit_choice)
+        fruityvice_data(fruit_choice)
 
 
 # fruit list on snowflake
