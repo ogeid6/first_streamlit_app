@@ -34,8 +34,8 @@ try:
         streamlit.error("please select a fruit to get information")
     else:
         fruityvice_data(fruit_choice)
-except urlError as e:
-  
+except URLError as e:
+  streamlit.error()
 
 
 streamlit.stop()
