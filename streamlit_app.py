@@ -34,7 +34,7 @@ try:
     streamlit.write = ('the user entered', fruit_choice)
     add_fruit(fruit_choice)
 
-st. stop()
+streamlit.stop()
 # fruit list on snowflake
 my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
 my_cur = my_cnx.cursor()
