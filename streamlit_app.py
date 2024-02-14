@@ -35,7 +35,7 @@ try:
     else:
         fruityvice_data(fruit_choice)
 except URLError as e:
-  streamlit.error()
+    streamlit.error()
 
 streamlit.stop()
 
