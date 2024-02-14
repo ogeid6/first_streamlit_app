@@ -1,4 +1,4 @@
-import streamlit
+cepimport streamlit
 import pandas as pd
 import requests
 import snowflake.connector
@@ -34,7 +34,8 @@ try:
         streamlit.error("please select a fruit to get information")
     else:
         fruityvice_data(fruit_choice)
-
+except urlError as e:
+  streamlit.error("not working bud")
 streamlit.stop()
 # fruit list on snowflake
 my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
