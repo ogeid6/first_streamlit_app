@@ -21,7 +21,7 @@ fruits_selected = streamlit.multiselect("Pick some fruits:", list(my_fruit_list.
 fruits_to_show = my_fruit_list.loc[fruits_selected]
 streamlit.dataframe(fruits_to_show)
 
-streamlit.stop()
+
 # fruityvice advice
 streamlit.header("Fruityvice fruit advice")
 def fruityvice_data(fruit):
@@ -37,8 +37,8 @@ try:
 except URLError as e:
   streamlit.error()
 
-
 streamlit.stop()
+
 # fruit list on snowflake
 my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
 my_cur = my_cnx.cursor()
